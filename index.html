@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio — Votre Nom</title>
+  <meta name="description" content="Portfolio — Projets, À propos et Contact" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    /* Reset + base */
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#6ee7b7;
+      --glass: rgba(255,255,255,0.04);
+      --maxw:1100px;
+      font-family: 'Inter',system-ui,Segoe UI,Roboto,Arial,sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:linear-gradient(180deg,#071021 0%,var(--bg) 100%);
+      color:#e6eef6; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+    a{color:var(--accent); text-decoration:none}
+
+    /* Layout */
+    .wrap{max-width:var(--maxw); margin:28px auto; padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,#0ea5a2,#6366f1);display:flex;align-items:center;justify-content:center;font-weight:800}
+    nav{display:flex;gap:14px;align-items:center}
+    nav a{padding:8px 12px;border-radius:10px;font-weight:600}
+    nav a:hover{background:var(--glass)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;margin-top:28px}
+    .hero-left{padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:16px}
+    h1{margin:0;font-size:34px}
+    p.lead{color:var(--muted);margin-top:12px}
+    .cta{margin-top:18px;display:flex;gap:12px}
+    .btn{background:var(--accent);color:#022  ;padding:10px 14px;border-radius:10px;font-weight:700}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--accent)}
+
+    .hero-right{background:url('https://images.unsplash.com/photo-1520975912412-a0b6b7d6c6f4?q=80&w=800&auto=format&fit=crop') center/cover;border-radius:16px;min-height:300px;position:relative;overflow:hidden}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.5));display:flex;flex-direction:column;justify-content:flex-end;padding:20px}
+    .hero-overlay h3{margin:0}
+
+    /* Sections */
+    section{margin-top:28px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    .project-thumb{height:160px;border-radius:10px;overflow:hidden;background-size:cover;background-position:center}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .tag{font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--muted)}
+
+    /* About + Skills */
+    .about{display:grid;grid-template-columns:1fr 320px;gap:18px}
+    .profile{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:18px;border-radius:12px}
+    .skills{display:flex;flex-direction:column;gap:8px}
+    .skill{display:flex;justify-content:space-between;font-size:14px}
+    .meter{height:8px;background:rgba(255,255,255,0.04);border-radius:999px;margin-top:6px;overflow:hidden}
+    .meter > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#60a5fa)}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+    .gallery img{width:100%;height:130px;object-fit:cover;border-radius:8px}
+
+    /* Contact */
+    form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    form .full{grid-column:1/-1}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:12px;border-radius:10px;color:inherit}
+    textarea{min-height:120px}
+
+    footer{margin-top:28px;padding:18px;border-radius:12px;background:transparent;border-top:1px solid rgba(255,255,255,0.02);display:flex;justify-content:space-between;align-items:center}
+
+    /* Responsive */
+    @media (max-width:1000px){
+      .hero{grid-template-columns:1fr}
+      .hero-right{min-height:220px}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .about{grid-template-columns:1fr}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      .wrap{padding:18px}
+      nav{display:none}
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">VA</div>
+        <div>
+          <div style="font-weight:800">Votre Nom</div>
+          <div style="font-size:13px;color:var(--muted)">Designer • Développeur • Créateur</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#projets">Projets</a>
+        <a href="#a-propos">À propos</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-left">
+          <h1>Bonjour — je suis <span style="color:var(--accent)">Votre Nom</span></h1>
+          <p class="lead">Je conçois des expériences numériques et je code des interfaces propres, accessibles et réactives. Voici une sélection de projets récents.</p>
+          <div class="cta">
+            <a class="btn" href="#projets">Voir mes projets</a>
+            <a class="btn ghost" href="#contact">Me contacter</a>
+          </div>
+          <div style="display:flex;gap:12px;margin-top:18px;color:var(--muted);font-size:13px">
+            <div>Basé à Paris</div>
+            <div>•</div>
+            <div>Disponible freelance</div>
+          </div>
+        </div>
+        <div class="hero-right" aria-hidden="true">
+          <div class="hero-overlay">
+            <h3>Featured Project</h3>
+            <p style="color:var(--muted);margin-top:6px">Prototype d'application mobile — UI / Frontend</p>
+          </div>
+        </div>
+      </section>
+      <!-- reste du code identique... (tronqué pour concision) -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function submitForm(e){
+      e.preventDefault();
+      const f = e.target;
+      const subject = encodeURIComponent(f.subject.value || 'Contact portfolio');
+      const body = encodeURIComponent('Nom: '+f.name.value+'\nEmail: '+f.email.value+'\n\n'+f.message.value);
+      window.location.href = `mailto:hello@votredomaine.com?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
+</html>
