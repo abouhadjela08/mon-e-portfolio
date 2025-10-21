@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Anthony Apruzzese — Portfolio</title>
+  <meta name="description" content="Portfolio — Anthony Apruzzese, Electrical Engineering Student" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo">AA</div>
+        <div class="brand-text">
+          <div class="brand-name">Anthony Apruzzese</div>
+          <div class="brand-sub">Electrical Engineering Student</div>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="Main">
+        <a href="#engineering">Engineering course</a>
+        <a href="#mobility">International Mobility</a>
+        <a href="#career">Career</a>
+        <a href="#internships">Internships</a>
+        <a href="#more">More</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+      <div class="hero-left">
+        <div class="kicker">More About ME</div>
+        <h1 id="hero-heading" class="hero-name"><span class="first">Anthony</span> <span class="last">Apruzzese</span></h1>
+        <div class="subtitle">ELECTRICAL ENGINEERING STUDENT</div>
+        <p class="hero-desc">Après trois années à l'Université de Versailles, je suis aujourd'hui étudiant à l'ENSEEIHT à Toulouse, passionné par l'électronique, les systèmes embarqués et les nouvelles technologies.</p>
+
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#career">Voir parcours</a>
+          <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">Télécharger CV</a>
+        </div>
+      </div>
+
+      <aside class="hero-right" aria-label="Profil Anthony">
+        <div class="photo-wrap">
+          <img src="https://apruzzeseanthony.wixsite.com/s/img/collection/IMG_8935_edited.jpg" alt="Photo Anthony" class="photo">
+        </div>
+        <div class="profile-info">
+          <h2 class="pi-name">Anthony Apruzzese</h2>
+          <div class="pi-role">Electrical Engineering Student — ENSEEIHT</div>
+          <div class="pi-links">
+            <a class="pill" href="#" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="pill" href="mailto:apruzzese.anthony@gmail.com">Email</a>
+          </div>
+
+          <div class="pi-contact">
+            <div><strong>Tel</strong></div>
+            <div class="muted">+33 6 98 22 54 49</div>
+            <div style="margin-top:8px"><strong>E-mail</strong></div>
+            <div class="muted">apruzzese.anthony@gmail.com</div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ENGINEERING + RESOURCES (two-column) -->
+    <section id="engineering" class="two-column">
+      <div class="card">
+        <h3>Engineering course</h3>
+        <p class="muted">Présentation du cursus, modules, projets et enseignements suivis à l'ENSEEIHT.</p>
+        <ul class="simple-list">
+          <li>Électronique analogique et numérique</li>
+          <li>Systèmes embarqués</li>
+          <li>Traitement du signal</li>
+        </ul>
+      </div>
+
+      <aside class="card side-card">
+        <h4>Ressources</h4>
+        <p class="muted">Liens utiles et téléchargement du CV.</p>
+        <div class="resource-list">
+          <a href="#" class="res-link">Télécharger CV (PDF)</a>
+          <a href="mailto:apruzzese.anthony@gmail.com" class="res-link">apruzzese.anthony@gmail.com</a>
+          <a href="https://www.linkedin.com" class="res-link" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </aside>
+    </section>
+
+    <section id="career" class="card-section">
+      <div class="card">
+        <h3>Career</h3>
+        <p class="muted">Parcours académique et expériences professionnelles.</p>
+        <ul class="simple-list">
+          <li>ENSEEIHT — Electrical Engineering (Actuel)</li>
+          <li>Université de Versailles (3 ans)</li>
+          <li>Stages et projets personnels</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="internships" class="card-section">
+      <div class="card">
+        <h3>Internships & Activities</h3>
+        <p class="muted">Descriptions courtes des stages, jobs d'été et engagements associatifs.</p>
+      </div>
+    </section>
+
+    <section id="more" class="card-section">
+      <div class="card">
+        <h3>Plus</h3>
+        <p class="muted">Intérêts, leadership et autres activités.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="card-section">
+      <div class="card">
+        <h3>Contact</h3>
+        <p class="muted">📧 apruzzese.anthony@gmail.com • 📞 +33 6 98 22 54 49</p>
+        <div style="margin-top:12px">
+          <a class="btn btn-primary" href="mailto:apruzzese.anthony@gmail.com">Envoyer un e-mail</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Anthony Apruzzese</div>
+      <div class="muted">Made with ♥ — Personal portfolio</div>
+    </div>
+  </footer>
+
+  <script>
+    // small JS: year + simple smooth scroll for anchor links
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target) target.scrollIntoView({behavior:'smooth'});
+      });
+    });
+  </script>
+</body>
+</html>
